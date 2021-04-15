@@ -1,0 +1,128 @@
+.wrap{
+  width: 100%;
+  height: 4545px;
+  /*margin-top: 200px;*/
+  /*background-color: rgb(21, 242, 56);*/
+}
+
+.wrap-center{
+  width: 1000px;
+  height: 4545px;
+  margin: auto;
+  background-color: #d5e1f5;
+}
+.header{
+  width: 1000px;
+  height: 350px;
+  background-color: black;
+}
+div {
+  display: block;
+}
+.auth{
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.middle{
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.logo{
+  display: block;
+  width: 220px;
+  height: 40px;
+}
+
+.search-wrap {
+  position: relative;
+  margin: 0 20px;
+  /*width: 500px;*/
+  flex-grow: 1;
+}
+
+.fx-1 {
+  /*-ms-flex-preferred-size: 0;*/
+  -webkit-box-flex: 1;
+  /*-ms-flex-positive: 1;*/
+
+  max-width: 65%;
+  min-width: 50px;
+}
+
+form{
+  display: block;
+}
+
+#quicksearch{
+  width: auto;
+}
+
+.search-box {
+  width: 480px;
+  position: relative;
+  display: flex;
+}
+
+input{
+  vertical-align: middle;
+}
+
+input[type='text']{
+  /*appearance: none;*/
+  -webkit-appearance: none;
+  font-size: 16px;
+
+}
+
+.search-box input, .search-box input:focus {
+  width: 100%;
+  padding: 0 60px 0 20px;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1px #e3e3e3;
+  color: #000;
+  border: solid #969595 1px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  height: 35px;
+  line-height: 40px;
+}
+
+.b-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  padding: 7px 7px;
+  background-color: blueviolet;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.fa-search {
+  width: 15px;
+  height: 15px;
+  background-image: url("https://icon-library.com/images/svg-search-icon/svg-search-icon-9.jpg");
+  background-size: 15px 15px;
+}
+
+.btn-login, .btn-register {
+  padding: 8px 15px;
+  border: solid grey 1px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.btn-login {
+  margin-left: 20px;
+  background-color: blueviolet;
+  color: white;
+}

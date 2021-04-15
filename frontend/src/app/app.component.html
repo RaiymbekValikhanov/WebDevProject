@@ -1,10 +1,30 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div>Hello</div>
-<router-outlet></router-outlet>
+<div class = "wrap" >
+  <div class = "wrap-center">
+    <header class = "header">
+      <div class = "auth row middle" style="width: 960px; height: 40px">
+          <a href="#" class="logo">
+            <img src="https://jut-su.net/templates/anime/images/logo.png" >
+          </a>
+
+          <div class="search-wrap fx-1">
+              <form id="quicksearch" method="post">
+                <input type="hidden" name="do" value="search">
+                <input type = "hidden" name="subaction" value="search">
+                <div class="search-box" >
+                  <input id="story" name="story" placeholder="Search for" type="text" autocomplete="off">
+                  <button type="submit" title="Find" class="b-search">
+                    <span class="fa fa-search">
+                    </span>
+                  </button>
+                </div>
+              </form>
+          </div>
+          <div class="login-btns">
+            <a href="#" class="btn-register">Register</a>
+            <a href="#" class="btn-login">Login</a>
+          </div>
+      </div>
+    </header>
+    <router-outlet></router-outlet>
+  </div>
+</div>

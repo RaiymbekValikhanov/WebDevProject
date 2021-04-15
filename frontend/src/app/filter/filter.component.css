@@ -1,0 +1,106 @@
+.filter {
+  background-color: white;
+  color: rgb(10, 10, 155);
+  font-size: 18px;
+  font-family: Helvetica;
+  width: 300px;
+  border: none;
+}
+
+.filter-head {
+  text-align: center;
+  padding: 8px 15px;
+  background-color: blueviolet;
+  font-weight: bold;
+  color: white;
+  border-bottom: #29297a solid 3px;
+}
+
+.filter-body {
+  padding: 5px 5px;
+}
+
+.filter-item {
+  /*padding-right: 10px;*/
+  margin: 5px 5px 10px 5px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 280px;
+  font-weight: bold;
+}
+
+.filter-item p {
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.filter-year {
+  display: flex;
+}
+.filter-year input {
+  padding: 5px 5px;
+  width: 125px;
+  border: solid grey 1px;
+  border-radius: 0px;
+  font-size: 14px;
+}
+.year-from {
+  margin-right: 10px;
+}
+.year-to {
+  margin-right: 0px;
+}
+
+.filter-form select {
+  font-size: 14px;
+  padding: 5px 3px;
+  width: 100%;
+  color: #343131;
+  border-radius: 0px;
+}
+
+.filter-genre {
+  font-size: 14px;
+  font-weight: normal;
+  color: #343131;
+}
+
+.selected-genres {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 5px;
+  border: grey solid 1px;
+}
+
+
+.genre-content-vis {
+  background-color: white;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: solid grey 1px;
+  border-top: none;
+}
+
+.genre-content-notvis {
+  display: none;
+}
+
+.search-btn {
+  border: none;
+  border-radius: 2px;
+  background-color: #29297a;
+  color: white;
+  width: 280px;
+  padding: 5px 5px;
+  margin: 2px 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
