@@ -1,0 +1,50 @@
+.header-two{
+  width: 1000px;
+  height: 240px;
+  display: flex;
+}
+.anime-block{
+  width: 130px;
+  height: 200px;
+  margin-left: 7px;
+  margin-top: 23px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.anime-block:hover{
+  cursor: pointer;
+}
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap div.asd {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  color: slateblue;
+  /*background-color: #29297a;*/
+  font-weight: 600;
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 30%,#105276 100%);
+}
+
+.tc-title {
+  padding: 7px;
+  text-align: center;
+  background-color: #105276;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  font-weight: 600;
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 30%,#105276 100%);
+  display: inline-grid;
+  align-items: flex-end;
+}

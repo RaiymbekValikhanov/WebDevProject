@@ -9,6 +9,8 @@ import { TitlePageComponent } from './title-page/title-page.component';
 import { FilterComponent } from './filter/filter.component';
 import { GenreOptionComponent } from './filter/genre-option/genre-option.component';
 import { GenreItemComponent } from './filter/genre-item/genre-item.component';
+import { AnimeListHeaderComponent} from './anime-list-header/anime-list-header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { GenreItemComponent } from './filter/genre-item/genre-item.component';
     TitlePageComponent,
     FilterComponent,
     GenreOptionComponent,
-    GenreItemComponent
+    GenreItemComponent,
+    AnimeListHeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

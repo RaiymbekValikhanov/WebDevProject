@@ -1,3 +1,23 @@
 <div class="title-container">
-
+  <div *ngIf="anime">
+    <div class="info">
+      <img [src]="anime.coverImage.large">
+      <div class="info-text">
+        <div class="title-box">
+          <h1 class="title">{{anime.title.english}}</h1>
+          <span>{{anime.title.native}}</span>
+        </div>
+        <div>
+          <div><b>Release Year:</b> {{anime.startDate.year}}</div>
+          <div><b>Genres:</b> <a *ngFor="let genre of anime.genres"> {{genre}}</a> </div>
+          <div><b>Episodes:</b> {{anime.episodes}}</div>
+          <div><b>Duration:</b> {{anime.duration}} min.</div>
+          <div><b>Rating:</b> {{anime.averageScore}}/100</div>
+        </div>
+      </div>
+    </div>
+    <div class="description">
+      {{anime.description}}
+    </div>
+  </div>
 </div>

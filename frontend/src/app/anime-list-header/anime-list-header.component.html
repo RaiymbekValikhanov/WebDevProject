@@ -1,0 +1,17 @@
+
+
+<div class="header-two">
+  <div *ngFor="let i of anime">
+<!--    <h6 *ngIf="i.name">-->
+<!--      {{i.name}}-->
+<!--    </h6>-->
+    <div *ngIf="i.path" class="anime-block">
+      <div class="row">
+        <div class="img-wrap">
+        <img [src]=i.path width="130" height="200">
+        <div style="text-align: center; font-family: Helvetica, sans-serif; color: azure" class="asd">{{i.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
