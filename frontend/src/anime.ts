@@ -15,7 +15,11 @@ export const anime = [
     id: 3,
     name: 'Клинок, рассекающий демонов',
     link: '',
+<<<<<<< HEAD
     path: 'assets\\Реинкарнация_Безработного.jpg'
+=======
+    path: 'assets\\Клинок_Рассекающий_Демонов.jpg'
+>>>>>>> ae06e4ce9c75c6301abad962486b0cdbd81b6a2a
   },
   {
     id: 4,
