@@ -1,0 +1,17 @@
+.genre-item {
+  display: inline-block;
+  border: solid grey 1px;
+  border-radius: 2px;
+  background-color: #c38af8;
+  padding: 3px 3px;
+  margin-right: 3px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  color: white;
+  font-weight: 400;
+}
+
+a {
+  margin-left: 3px;
+  font-weight: bold;
+}

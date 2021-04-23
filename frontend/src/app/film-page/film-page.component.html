@@ -1,0 +1,28 @@
+<div class = "wrap" >
+  <div class = "wrap-center">
+    <app-anime-list-header></app-anime-list-header>
+    <div class="main-container">
+        <div class="film-list" >
+          <div *ngFor="let i of film_list" class="film-list-class">
+            <div *ngIf="i.photo" class="film-container">
+              <a href="#"><img [src]=i.photo [width]="150" [height]="230" style="margin-left: 10px" class="image"></a>
+              <div class="name-field">{{i.name}}</div>
+              <div class="star-rate">
+                <i class="fa fa-star"></i>
+                <span class="mark-state">{{i.mark}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        <app-filter>
+      
+        </app-filter>
+      </div>
+      <app-footer></app-footer>
+
+    </div>
+  </div>   
+      
+   

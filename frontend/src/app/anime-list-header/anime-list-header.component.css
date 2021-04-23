@@ -1,3 +1,4 @@
+
 .header-two{
   width: 1000px;
   height: 240px;
@@ -47,4 +48,186 @@
   background: linear-gradient(to bottom,rgba(0,0,0,0) 30%,#105276 100%);
   display: inline-grid;
   align-items: flex-end;
+}
+
+
+
+div.top-anime{
+  width: 50px;
+  height: 50px;
+
+}
+
+.anime-block{
+  margin-top: 0;
+}
+
+.anime-header{
+  margin-top: 7px;
+}
+
+.wrap{
+  width: 100%;
+  height: 3137px;
+  /*margin-top: 200px;*/
+  /*background-color: rgb(21, 242, 56);*/
+}
+button.b-search{
+  cursor: pointer;
+}
+.wrap-center{
+  width: 1000px;
+  height: 3137px;
+  margin: auto;
+  background-color: #d5e1f5;
+}
+.header{
+  width: 1000px;
+  height: 350px;
+  background-color: black;
+}
+div {
+  display: block;
+}
+.auth{
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.middle{
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.logo{
+  display: block;
+  width: 220px;
+  height: 40px;
+}
+
+.search-wrap {
+  position: relative;
+  margin: 0 20px;
+  /*width: 500px;*/
+  flex-grow: 1;
+  width: 480px;
+}
+
+.fx-1 {
+  /*-ms-flex-preferred-size: 0;*/
+  -webkit-box-flex: 1;
+  /*-ms-flex-positive: 1;*/
+
+  max-width: 500px;
+  min-width: 50px;
+}
+
+form{
+  display: block;
+}
+
+#quicksearch{
+  width: 480px;
+}
+
+.search-box {
+  width: 480px;
+  position: relative;
+  display: flex;
+}
+
+input{
+  vertical-align: middle;
+}
+
+input[type='text']{
+  /*appearance: none;*/
+  -webkit-appearance: none;
+  font-size: 16px;
+
+}
+
+.search-box input, .search-box input:focus {
+  width: 100%;
+  padding: 0 60px 0 20px;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1px #e3e3e3;
+  color: #000;
+  border: solid #969595 1px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  height: 35px;
+  line-height: 40px;
+}
+
+.b-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  padding: 7px 7px;
+  background-color: blueviolet;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.fa {
+  color: white;
+  margin-left: 3px;
+}
+
+.btn-login, .btn-register {
+  padding: 8px 15px;
+  border: solid grey 1px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.btn-login {
+  margin-left: 20px;
+  background-color: blueviolet;
+  color: white;
+}
+
+.header-three{
+  width: 1000px;
+  height: 50px;
+  background-color: #FFFFFF;
+  /*margin-top: 50px;*/
+
+}
+
+ul.hr {
+  margin: 0; /* Обнуляем значение отступов */
+  padding: 4px; /* Значение полей */
+
+}
+ul.hr li {
+  display: inline; /* Отображать как строчный элемент */
+  margin-right: 5px; /* Отступ слева */
+  margin-top: 6px;
+  /*border: 1px solid #000; !* Рамка вокруг текста *!*/
+  padding: 3px; /* Поля вокруг текста */
+  font-family: Helvetica, sans-serif;
+}
+
+a:hover, a:focus {
+  color: #a31c89;
+  text-decoration: none;
+}
+
+.invisible{
+  display: none;
+}
+
+.app_anime_list_header_class{
+  width: 0;
+  height: 0;
 }

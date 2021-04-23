@@ -1,0 +1,20 @@
+
+.genre-option {
+  position: relative;
+  margin: 0px 3px;
+  padding: 5px 3px;
+  border-bottom: solid #343131 1px;
+}
+
+.genre-option:hover {
+  background-color: #c38af8;
+}
+
+.genre-select {
+  color: grey;
+  position: relative;
+  margin: 0px 3px;
+  padding: 5px 3px;
+  border-bottom: solid #343131 1px;
+  pointer-events: none;
+}

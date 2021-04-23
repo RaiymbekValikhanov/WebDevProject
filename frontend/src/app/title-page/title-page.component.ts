@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Anime } from '../models';
-import { AnimeService } from '../anime.service';
+import { AnimeService } from '../services/anime.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,15 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TitlePageComponent implements OnInit {
   anime: Anime | undefined;
+  nums: number[] = [];
+  rating = 0;
   constructor(
     private route: ActivatedRoute,
     private animeService: AnimeService,
-  ) { }
-
+  ) {
+  }
   ngOnInit(): void {
+    this.nums = Array(10).fill(0).map((x, i) => i + 1);
     this.route.paramMap.subscribe((params) => {
-      const id = params.get('id');
-      this.getAnimeById(id);
+      const name = params.get('name');
+      this.getAnimeByName(name);
+      this.rating = 0;
       // this.getAnimeByName('DemonSlayer');
     });
   }
@@ -30,7 +34,18 @@ export class TitlePageComponent implements OnInit {
   }
   getAnimeByName(name: string | null): void {
     this.animeService.getAnimeByName(name).subscribe((animeData) => {
-      console.log(animeData.data.Media);
+      this.anime = animeData.data.Media;
     });
+  }
+
+  goToPlayer(): void {
+    const bodyPos = document.body.getBoundingClientRect().top;
+    const playPos = document.body.getElementsByClassName('player')[0].getBoundingClientRect().top;
+    const offset = playPos - bodyPos;
+    window.scrollTo({top: offset, behavior: 'smooth'});
+  }
+  rate(rating: number): void {
+    this.rating = rating;
+    console.log(this.rating);
   }
 }

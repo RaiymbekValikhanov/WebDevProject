@@ -1,0 +1,75 @@
+.amine-list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-left: 40px;
+  margin-top: 15px;
+  padding: 10px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.anime-container{
+  width: 175px;
+  height: 280px;
+}
+
+
+.anime-list-class{
+  width: 200px;
+  display: flex;
+  height: 290px;
+}
+
+
+.name-field{
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Helvetica, sans-serif;
+}
+
+.name-field:hover{
+  cursor: pointer;
+}
+
+.image{
+  cursor: pointer;
+}
+
+.episodes{
+  background-color: #A31C89;
+  margin-top: -65px;
+  margin-left: 60px;
+  width: 100px;
+  position: absolute;
+  text-align: center;
+  color: #F9FFF8;
+  font-size: 15px;
+}
+.image{
+  margin: auto;
+}
+
+
+.star-rate{
+  width: 47px;
+  margin-left: 18px;
+  margin-top: -240px;
+  position: absolute;
+  /*display: inline-block;*/
+  box-shadow: 0 0 0 1px #111;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.7);
+}
+.fa-star{
+  color: #FFA300;
+  margin-left: 5px;
+  padding-right: 5px;
+}
+
+.mark-state{
+  color: #CCCCCC;
+  font-family: Helvetica, sans-serif;
+}

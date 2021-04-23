@@ -1,23 +1,55 @@
-<div class="title-container">
-  <div *ngIf="anime">
-    <div class="info">
-      <img [src]="anime.coverImage.large">
-      <div class="info-text">
-        <div class="title-box">
-          <h1 class="title">{{anime.title.english}}</h1>
-          <span>{{anime.title.native}}</span>
+<div class = "wrap" >
+  <div class = "wrap-center">
+
+    <app-anime-list-header></app-anime-list-header>
+    <div class="title-container">
+      <div *ngIf="anime">
+        <div class="info">
+          <div class="img-cont">
+            <img [src]="anime.coverImage.large">
+            <div class="rating">
+              <div *ngFor="let num of nums" (click)="rate(num)">
+                <input class="fa fa-star" type="radio" [(ngModel)]="num > rating">
+              </div>
+            </div>
+          </div>
+          <div class="info-text">
+            <div class="title-box">
+              <h1 class="title">{{anime.title.english}}</h1>
+              <span>{{anime.title.native}}</span>
+            </div>
+            <div>
+              <div><b>Release Year</b> {{anime.startDate.year}}</div>
+              <div><b>Genres</b> <a *ngFor="let genre of anime.genres"> {{genre}}</a> </div>
+              <div><b>Episodes</b> {{anime.episodes}}</div>
+              <div><b>Duration</b> {{anime.duration}} min.</div>
+              <div><b>Rating</b> {{anime.averageScore/10}}/10</div>
+            </div>
+            <div class="button-section">
+              <a class="button-watch" (click)="goToPlayer()">
+                <span class="fa fa-play"></span>
+                Watch
+              </a>
+              <a class="add-to-list">
+                <span class="fa fa-plus"></span>
+                Add to List
+              </a>
+            </div>
+          </div>
         </div>
-        <div>
-          <div><b>Release Year:</b> {{anime.startDate.year}}</div>
-          <div><b>Genres:</b> <a *ngFor="let genre of anime.genres"> {{genre}}</a> </div>
-          <div><b>Episodes:</b> {{anime.episodes}}</div>
-          <div><b>Duration:</b> {{anime.duration}} min.</div>
-          <div><b>Rating:</b> {{anime.averageScore}}/100</div>
+        <div class="description">
+          {{anime.description}}
+        </div>
+        <div class="player">
+          <iframe src="https://www.youtube.com/embed/Mn7Bv8rGRzg"
+                  title="Anime" frameborder="0" allow="accelerometer;
+              autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
-    <div class="description">
-      {{anime.description}}
-    </div>
+    <app-footer></app-footer>
+
   </div>
 </div>
+

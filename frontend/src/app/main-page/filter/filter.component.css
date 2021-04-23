@@ -1,0 +1,119 @@
+:host {
+  box-shadow: 0 10px 5px 0px #888;
+}
+
+.filter {
+  background-color: white;
+  color: rgb(10, 10, 155);
+  font-size: 18px;
+  font-family: Helvetica;
+  width: 320px;
+  top: 0px;
+  position: sticky;
+  padding-bottom: 10px;
+}
+
+.filter-head {
+  text-align: center;
+  padding: 8px 15px;
+  background-color: blueviolet;
+  font-weight: bold;
+  color: white;
+  border-bottom: #29297a solid 3px;
+}
+
+.filter-body {
+  padding: 5px 5px;
+  /*margin-bottom: 10px;*/
+}
+
+.filter-item {
+  /*padding-right: 10px;*/
+  margin: 5px 8px 20px 8px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.filter-item p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.filter-year {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.filter-year input {
+  padding: 8px 8px;
+  width: 125px;
+  border: solid grey 1px;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.filter-form select {
+  font-size: 14px;
+  padding: 5px 3px;
+  width: 100%;
+  color: #343131;
+  border-radius: 0px;
+}
+
+.filter-genre {
+  font-size: 14px;
+  font-weight: normal;
+  color: #343131;
+}
+
+.selected-genres {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 8px;
+  border: grey solid 1px;
+}
+
+
+.genre-content-vis {
+  background-color: white;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: solid grey 1px;
+  border-top: none;
+}
+
+.genre-content-notvis {
+  display: none;
+}
+
+.order-by select {
+  padding: 8px 8px;
+}
+
+.search-btn-cont {
+  display: inline-block;
+  width: 100%;
+  padding: 0px 8px;
+  box-sizing: border-box;
+}
+.search-btn {
+  border: none;
+  border-radius: 2px;
+  background-color: #29297a;
+  color: white;
+  width: 100%;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-size: 16px;
+}

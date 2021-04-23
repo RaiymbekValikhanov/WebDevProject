@@ -1,13 +1,15 @@
 .wrap{
   width: 100%;
-  height: 4545px;
+  height: 3137px;
   /*margin-top: 200px;*/
   /*background-color: rgb(21, 242, 56);*/
 }
-
+button.b-search{
+  cursor: pointer;
+}
 .wrap-center{
   width: 1000px;
-  height: 4545px;
+  height: 3137px;
   margin: auto;
   background-color: #d5e1f5;
 }
@@ -46,6 +48,7 @@ div {
   margin: 0 20px;
   /*width: 500px;*/
   flex-grow: 1;
+  width: 480px;
 }
 
 .fx-1 {
@@ -53,7 +56,7 @@ div {
   -webkit-box-flex: 1;
   /*-ms-flex-positive: 1;*/
 
-  max-width: 65%;
+  max-width: 500px;
   min-width: 50px;
 }
 
@@ -62,7 +65,7 @@ form{
 }
 
 #quicksearch{
-  width: auto;
+  width: 480px;
 }
 
 .search-box {
@@ -135,7 +138,6 @@ input[type='text']{
 
 }
 
-
 ul.hr {
   margin: 0; /* Обнуляем значение отступов */
   padding: 4px; /* Значение полей */
@@ -148,4 +150,18 @@ ul.hr li {
   /*border: 1px solid #000; !* Рамка вокруг текста *!*/
   padding: 3px; /* Поля вокруг текста */
   font-family: Helvetica, sans-serif;
+}
+
+a:hover, a:focus {
+  color: #a31c89;
+  text-decoration: none;
+}
+
+.invisible{
+  display: none;
+}
+
+.app_anime_list_header_class{
+  width: 0;
+  height: 0;
 }

@@ -1,16 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* You can add global styles to this file, and also import other style files */
-
 #mode{
-/*  background-image: url("https://gen.jut.su/chakranature/background_main.dark.jpg");*/
-/*  background-position: top;*/
+  /*  background-image: url("https://gen.jut.su/chakranature/background_main.dark.jpg");*/
+  /*  background-position: top;*/
   background-repeat: no-repeat;
   background-size: auto;
   /*padding-top: 200px;*/
   padding-bottom: 200px;
-/*  background-attachment: fixed;*/
-/*  !*margin-top: -100px;*!*/
+  /*  background-attachment: fixed;*/
+  /*  !*margin-top: -100px;*!*/
 }
 
 body {

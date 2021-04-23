@@ -1,17 +1,72 @@
+<header class = "header" >
+  <div class = "auth row middle" style="width: 960px; height: 40px">
+    <a href="#" class="logo">
+      <img src="https://jut-su.net/templates/anime/images/logo.png" >
+    </a>
+
+    <div class="search-wrap fx-1">
+      <form id="quicksearch" method="post">
+        <input type="hidden" name="do" value="search">
+        <input type = "hidden" name="subaction" value="search">
+        <div class="search-box" >
+          <input id="story" name="story" placeholder="Search for" type="text" autocomplete="off" [(ngModel)]="name">
+          <button type="submit" title="Find" class="b-search" [routerLink]="['/title', name]">
+                <span class="fa fa-search">
+                </span>
+          </button>
+        </div>
+      </form>
+    </div>
 
 
-<div class="header-two">
-  <div *ngFor="let i of anime">
-<!--    <h6 *ngIf="i.name">-->
-<!--      {{i.name}}-->
-<!--    </h6>-->
-    <div *ngIf="i.path" class="anime-block">
-      <div class="row">
-        <div class="img-wrap">
-        <img [src]=i.path width="130" height="200">
-        <div style="text-align: center; font-family: Helvetica, sans-serif; color: azure" class="asd">{{i.name}}</div>
+    <div class="login-btns">
+      <button href="#" class="btn-register" *ngIf="!this.get_userService().token">Register</button>
+      <button routerLink="/login" class="btn-login" *ngIf="!this.get_userService().token" >Login</button>
+      <div *ngIf="this.get_userService().token"> Welcome, user</div>
+      <button routerLink="/" class="btn-login" *ngIf="this.get_userService().token" (click)="LogOut()">LogOut</button>
+    </div>
+  </div>
+
+  <div class="header-two" >
+    <div *ngFor="let i of anime" class="anime-header">
+  <!--    <h6 *ngIf="i.name">-->
+  <!--      {{i.name}}-->
+  <!--    </h6>-->
+      <div *ngIf="i.path" class="anime-block">
+        <div class="row">
+          <div class="img-wrap">
+          <img [src]=i.path width="130" height="200">
+          <div style="text-align: center; font-family: Helvetica, sans-serif; color: azure" class="asd">{{i.name}}</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="header-three" >
+    <ul class="hr">
+      <li>
+        <a routerLink="/films">Фильмы</a>
+      </li>
+      <li>
+        TV сериал
+      </li>
+      <li>
+        OVA
+      </li>
+      <li>
+        ONA
+      </li>
+      <li>
+        Топ 100
+      </li>
+      <li>
+        Онгоинги
+      </li>
+      <li>
+        Анонсы
+      </li>
+    </ul>
+  </div>
+</header>
+
+

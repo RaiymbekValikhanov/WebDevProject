@@ -1,0 +1,54 @@
+<div class="filter">
+  <div class="filter-head">
+    Filter
+  </div>
+  <div class="filter-body">
+    <form class="filter-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div class="filter-item">
+        <p>Year</p>
+        <div class="filter-year">
+          <input class="year-from" placeholder="from" type="number" min="1960" max="2021" formControlName="yearFrom">
+          <input class="year-to" placeholder="to" type="number" min="1960" max="2021" formControlName="yearTo">
+        </div>
+      </div>
+      <div class="filter-item">
+        <p>Genre</p>
+        <div class="filter-genre" (click)="genresList($event)">
+          <span *ngIf="!selected.includes(true)" class="selected-genres">Select genre</span>
+          <div  *ngIf="selected.includes(true)" class="selected-genres">
+            <div *ngFor="let genre of genres">
+<!--              <app-genre-item [genre]="genre" (genreEvent)="removeGenre($event)" >-->
+<!--              </app-genre-item>-->
+              <app-genre-item [genre]="genre" [(select)]="selected[genres.indexOf(genre)]"></app-genre-item>
+            </div>
+          </div>
+          <div [ngClass]="{'genre-content-vis': visible, 'genre-content-notvis': !visible}">
+            <div class="genre-list" *ngFor="let genre of genres">
+<!--              <app-genre-option [genre]="genre" (genreEvent)="addGenre($event)">-->
+<!--              </app-genre-option>-->
+              <app-genre-option [genre]="genre" [(select)]="selected[genres.indexOf(genre)]"></app-genre-option>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filter-item">
+        <p>Order By</p>
+        <div class="order-by">
+          <select formControlName="orderBy">
+            <option>Date</option>
+            <option>Rating</option>
+            <option>Alphabet</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-btn-cont">
+        <button class="search-btn" type="submit" (click)="passGenres()">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div style="padding: 25px 15px 0px 15px">
+    <img src="https://i.pinimg.com/originals/35/aa/8b/35aa8b1a331cf52af866dc0a06d68c6f.jpg" width="100%">
+  </div>
+</div>

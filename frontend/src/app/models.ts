@@ -1,3 +1,7 @@
+export interface AuthToken{
+  // tslint:disable-next-line:variable-name
+  token: string;
+}
 export interface AnimeDate {
   day: number ;
   month: number;
@@ -57,6 +61,7 @@ query ($id: Int)
       }
       episodes, duration, isAdult
     }
+
   }
 `;
 
