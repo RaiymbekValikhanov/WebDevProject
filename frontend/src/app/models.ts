@@ -2,39 +2,61 @@ export interface AuthToken{
   // tslint:disable-next-line:variable-name
   token: string;
 }
-export interface AnimeDate {
-  day: number ;
-  month: number;
+
+export interface Comment {
+  id: number;
+  body: string;
+  user: any;
+  anime: number;
+}
+
+export interface Film {
+  name: string;
+  mark: number;
+  photo: string;
   year: number;
 }
 
 export interface Anime {
+  // id: number;
+  // title: {
+  //   english: string;
+  //   romaji: string;
+  //   native: string;
+  // };
+  // averageScore: number;
+  // startDate: AnimeDate;
+  // endDate: AnimeDate;
+  // genres: string[];
+  // description: string;
+  // coverImage: {
+  //   large: string;
+  //   medium: string;
+  // };
+  // episodes: number;
+  // duration: number;
+  // isAdult: boolean;
   id: number;
-  title: {
-    english: string;
-    romaji: string;
-    native: string;
-  };
-  averageScore: number;
-  startDate: AnimeDate;
-  endDate: AnimeDate;
-  genres: string[];
-  description: string;
-  coverImage: {
-    large: string;
-    medium: string;
-  };
+  genres: any[];
+  name: string;
   episodes: number;
+  mark: number;
+  photo: string;
+  year: number;
+  title_name: string;
+  description: string;
   duration: number;
-  isAdult: boolean;
+  comments: Comment[];
+}
+
+export interface Filter {
+  yearFrom: number;
+  yearTo: number;
+  genres: string[];
+  orderBy: string;
 }
 
 // Data from AniList
-export interface AnimeData {
-  data: {
-    Media: Anime;
-  };
-}
 
 export const animeQuery = `
 query ($id: Int)

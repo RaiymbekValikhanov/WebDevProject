@@ -5,10 +5,10 @@ import {AuthToken} from '../models';
 
 @Injectable()
 export class UserService {
-  URL = 'http://127.0.0.1:8000/';
+  URL = 'http://127.0.0.1:8000/main';
   private httpOptions: any;
   // @ts-ignore
-  public token: AuthToken['token'];
+  public token: AuthToken['token'] = localStorage.getItem('token');
   // tslint:disable-next-line:variable-name
   // @ts-ignore
   // tslint:disable-next-line:variable-name
@@ -35,10 +35,10 @@ export class UserService {
     this.http.post('/api-token-refresh/', JSON.stringify({token: this.token}), this.httpOptions).subscribe(
       data => {
         // @ts-ignore
-        this.updateData(data['token']);
+        this.updateData(data.token);
       },
       err => {
-        this.errors = err['error'];
+        this.errors = err.error;
       }
     );
   }
@@ -47,6 +47,7 @@ export class UserService {
   public logout() {
     this.token = '';
     this.username = '';
+    localStorage.clear();
   }
 
   // tslint:disable-next-line:typedef
@@ -64,5 +65,37 @@ export class UserService {
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.username;
   }
-
+  getUser(): Observable<any> {
+    return this.http.get<any>(`${this.URL}/user`);
+  }
+  addToUserList(animeId: number): Observable<any> {
+    return this.http.post<any>(`${this.URL}/user/`, {
+      anime: animeId,
+    });
+  }
+  removeFromUserList(animeId: number): Observable<any> {
+    return this.http.request('delete', `${this.URL}/user/`, {
+      body: {
+        anime: animeId,
+      }
+    });
+  }
+  public confirmCom(animeId: number, body: string): Observable<any>{
+    return this.http.post<any>(`${this.URL}/comments/`, {
+      body: body, anime: animeId
+    });
+  }
+  deleteCom(commentId: number): Observable<any> {
+    return this.http.request<any>('delete', `${this.URL}/comments/`, {
+      body: {
+        id: commentId,
+      }
+    });
+  }
+  editCom(commentId: number, text: string): Observable<any> {
+    return this.http.put<any>(`${this.URL}/comments/`, {
+      comment: commentId,
+      body: text,
+    });
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FilterService} from '../../services/filter.service';
+import { FilterService } from '../../services/filter.service';
+import { Anime } from '../../models';
 
 @Component({
   selector: 'app-anime-list',
@@ -11,7 +12,7 @@ export class AnimeListComponent implements OnInit {
     private filterService: FilterService,
   ) { }
 
-  get animeList(): any[] {
+  get animeList(): Anime[] {
     return this.filterService.getAnimeList();
   }
   ngOnInit(): void {

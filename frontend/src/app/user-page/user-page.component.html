@@ -1,0 +1,42 @@
+<div class = "wrap" >
+  <div class = "wrap-center">
+    <app-anime-list-header></app-anime-list-header>
+    <div class="user-cont" *ngIf="user">
+      <div class="user-page">
+        <div class="user-info">
+          <img class="user-img" src="https://i.pinimg.com/564x/58/ee/09/58ee092f0fff5f025cf9230f55bcd818.jpg">
+          <div class="user-text">
+            <div style="margin-bottom: 15px"><b style="font-size: 30px;">{{user.user_instance.username}}</b></div>
+            <div><b>Registration date:</b> {{user.user_instance.date_joined}}</div>
+          </div>
+        </div>
+        <div class="user-anime">
+          <div class="user-anime-text">Anime List</div>
+          <div *ngIf="animeList.length == 0" class="user-anime-list">Empty</div>
+          <div *ngIf="animeList.length != 0">
+            <div *ngFor="let anime of animeList">
+              <div class="user-anime-list-cont">
+                <div class="user-anime-list" [routerLink]="['../title/', anime.name]">
+                  <img [src]="anime.photo" height="60px">
+                  <div>{{anime.name}}</div>
+                </div>
+                <div class="fa fa-close" (click)="remoteAnime(anime.id)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--        <div class="user-anime-liked">-->
+<!--          <div class="user-anime-liked-text">Liked Anime</div>-->
+<!--          <div *ngIf="likedAnime.length == 0" class="user-anime-list">Empty</div>-->
+<!--          <div *ngIf="likedAnime.length != 0">-->
+<!--            <div *ngFor="let anime in likedAnime">-->
+<!--              <div class="user-anime-list">-->
+<!--                {{anime}}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

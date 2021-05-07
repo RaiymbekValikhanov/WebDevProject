@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
+import {UserService} from './user.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthInterceptorService implements HttpInterceptor{
 
-  constructor() { }
+  constructor(
+  ) { }
 
   // tslint:disable-next-line:typedef
   // @ts-ignore
@@ -38,7 +38,7 @@ export class AuthInterceptorService implements HttpInterceptor{
     const token = localStorage.getItem('token');
     if (token) {
       const newReq = req.clone({
-        headers: req.headers.append('Authorization', `JWT ${token}`)
+        setHeaders: { 'Authorization' : `Token ${token}`},
       });
       return next.handle(newReq);
     }

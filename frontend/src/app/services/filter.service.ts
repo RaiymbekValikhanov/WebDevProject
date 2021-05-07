@@ -1,24 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { anime_list } from '../../anime-list';
+import { Anime, Film, Filter } from '../models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
-  animeList: any[] = [];
+  animeList: Anime[] = [];
+  BASE_URL = 'http://127.0.0.1:8000/main/animes/';
+  BASE_URL_FILM = 'http://127.0.0.1:8000/main/films/';
 
   constructor(
     private http: HttpClient,
-  ) { this.animeList = anime_list; }
+  ) { this.initAnime(); }
+  initAnime(): void {
+    this.http.get<Anime[]>(this.BASE_URL).subscribe((data) => {
+      this.animeList = data;
+    });
+  }
+  getFilms(): Observable<Film[]> {
+    return this.http.get<Film[]>(this.BASE_URL_FILM);
+  }
 
-  filterAnime(filter: any): void {
-    console.log(filter);
-    this.http.get<any>('/assets/anime-list.json').subscribe((data) => {
+  filterAnime(filter: Filter): void {
+    this.http.get<Anime[]>(this.BASE_URL).subscribe((data) => {
       this.animeList = data.filter((value: any) => {
         const okYear = value.year >= filter.yearFrom;
-        const okGenres = value.genre.some((el: string) => filter.genres.includes(el)) || filter.genres.length === 0;
-        return okYear && okGenres;
+        const okGenres = value.genres.some((el: any) => filter.genres.includes(el.name));
+        const okFilter = filter.genres.length === 0;
+        return okYear && (okGenres || okFilter);
       });
       this.animeList.sort((a, b): any => {
         if (filter.orderBy === 'Date') {
@@ -35,7 +46,7 @@ export class FilterService {
     });
   }
 
-  getAnimeList(): any[] {
+  getAnimeList(): Anime[] {
     return this.animeList;
   }
 }

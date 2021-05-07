@@ -1,0 +1,18 @@
+<div class="one-comment" *ngIf="comment">
+  <div class="comment-header">
+    <div class="user-name">{{comment.user.user_instance.username}}</div>
+    <div class="fa fa-edit" *ngIf="visitorComment"
+         (click)="visibleEdit = !visibleEdit">
+    </div>
+    <div class="fa fa-trash" *ngIf="visitorComment"
+         (click)="deleteCom(comment.id)"></div>
+  </div>
+  <div class="comment-body">{{comment.body}}</div>
+  <div class="comment-edit" *ngIf="visibleEdit">
+    <textarea [(ngModel)]="this.editText"></textarea>
+    <div class="edit-btn">
+      <button (click)="editCom(comment.id)">Сохранить</button>
+      <button (click)="visibleEdit = !visibleEdit">Отмена</button>
+    </div>
+  </div>
+</div>

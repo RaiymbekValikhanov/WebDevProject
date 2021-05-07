@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-// import {anime} from 'src/anime';
-import {anime_list} from '../anime-list';
 import {NgModel} from '@angular/forms';
 import {MainPageComponent} from './main-page/main-page.component';
 import {UserService} from './services/user.service';

@@ -10,14 +10,18 @@ import { FilterComponent } from './main-page/filter/filter.component';
 import { GenreOptionComponent } from './main-page/filter/genre-option/genre-option.component';
 import { GenreItemComponent } from './main-page/filter/genre-item/genre-item.component';
 import { AnimeListHeaderComponent } from './anime-list-header/anime-list-header.component';
-import {FooterComponent} from './footer/footer.component';
-import {HttpClientModule} from '@angular/common/http';
-import {AuthInterceptorService} from './services/auth-interceptor.service';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginPageComponent } from './login-page/login-page.component';
-import {UserService} from './services/user.service';
+import { UserService } from './services/user.service';
 import { FilmPageComponent} from './film-page/film-page.component';
 import { AnimeListComponent } from './main-page/anime-list/anime-list.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { FilterService } from './services/filter.service';
+import { AnimeService } from './services/anime.service';
+import { CommentComponent } from './title-page/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { AnimeListComponent } from './main-page/anime-list/anime-list.component'
     FooterComponent,
     LoginPageComponent,
     FilmPageComponent,
-    AnimeListComponent
+    AnimeListComponent,
+    UserPageComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +47,13 @@ import { AnimeListComponent } from './main-page/anime-list/anime-list.component'
     ReactiveFormsModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
-    UserService
+    UserService,
+    FilterService,
+    AnimeService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService, multi: true
+    },
   ],
   bootstrap: [AppComponent]
 })

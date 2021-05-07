@@ -26,7 +26,9 @@ export class LoginPageComponent implements OnInit {
     this._userService.logIn(this.user.username, this.user.password).subscribe((data) => {
       console.log(data);
       this.get_userService().token = data.token;
-      alert(this.get_userService().token);
+      window.localStorage.setItem('token', data.token);
+    }, error => {
+      alert('Неверный логин или пароль');
     });
     console.log(this.user.username, this.user.password);
     // alert(this.user.token);

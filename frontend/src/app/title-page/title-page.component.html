@@ -3,10 +3,10 @@
 
     <app-anime-list-header></app-anime-list-header>
     <div class="title-container">
-      <div *ngIf="anime">
+      <div *ngIf="anime && visitorLoaded">
         <div class="info">
           <div class="img-cont">
-            <img [src]="anime.coverImage.large">
+            <img [src]="anime.photo">
             <div class="rating">
               <div *ngFor="let num of nums" (click)="rate(num)">
                 <input class="fa fa-star" type="radio" [(ngModel)]="num > rating">
@@ -15,24 +15,28 @@
           </div>
           <div class="info-text">
             <div class="title-box">
-              <h1 class="title">{{anime.title.english}}</h1>
-              <span>{{anime.title.native}}</span>
+              <h1 class="title">{{anime.name}}</h1>
+              <span>{{anime.name}}</span>
             </div>
             <div>
-              <div><b>Release Year</b> {{anime.startDate.year}}</div>
-              <div><b>Genres</b> <a *ngFor="let genre of anime.genres"> {{genre}}</a> </div>
+              <div><b>Release Year</b> {{anime.year}}</div>
+              <div><b>Genres</b> <a *ngFor="let genre of anime.genres"> {{genre.name}}</a> </div>
               <div><b>Episodes</b> {{anime.episodes}}</div>
               <div><b>Duration</b> {{anime.duration}} min.</div>
-              <div><b>Rating</b> {{anime.averageScore/10}}/10</div>
+              <div><b>Rating</b> {{anime.mark}}</div>
             </div>
             <div class="button-section">
               <a class="button-watch" (click)="goToPlayer()">
                 <span class="fa fa-play"></span>
                 Watch
               </a>
-              <a class="add-to-list">
+              <a class="add-to-list" (click)="addToList(anime.id)" *ngIf="!isAdded">
                 <span class="fa fa-plus"></span>
                 Add to List
+              </a>
+              <a class="added-to-list" (click)="removeFromList(anime.id)" *ngIf="isAdded">
+                <span class="fa fa-check"></span>
+                Added
               </a>
             </div>
           </div>
@@ -41,10 +45,26 @@
           {{anime.description}}
         </div>
         <div class="player">
-          <iframe src="https://www.youtube.com/embed/Mn7Bv8rGRzg"
+          <iframe src="https://www.youtube.com/embed/KeGctT6lJCU"
                   title="Anime" frameborder="0" allow="accelerometer;
               autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           </iframe>
+        </div>
+        <div class="comment">
+          <textarea class="leave-comment" placeholder="Оставьте комментарий" rows="5" [(ngModel)]="this.text">
+
+          </textarea>
+          <div class="bt-com">
+            <button (click)="confirm(anime.id, this.text)">Подтвердить</button>
+            <button>Отмена</button>
+          </div>
+        </div>
+        <div class="comments">
+          <div *ngFor="let comment of anime.comments">
+            <app-comment [comment]="comment"
+                         [visitorComment]="visitor && visitor.user_instance.username == comment.user.user_instance.username">
+            </app-comment>
+          </div>
         </div>
       </div>
     </div>

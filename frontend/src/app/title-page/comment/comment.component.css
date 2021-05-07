@@ -1,0 +1,60 @@
+.one-comment {
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.user-name {
+  color: white;
+  padding: 5px 5px;
+  font-size: 18px;
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.comment-body {
+  padding: 8px 5px;
+  font-size: 16px;
+
+}
+
+.comment-header {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #4848b5;
+}
+
+.fa-edit, .fa-trash {
+  font-size: 18px;
+  margin-left: 8px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+
+.fa-edit:hover {
+  background-color: white;
+  color: black;
+}
+
+.fa-trash:hover {
+  background-color: white;
+  color: firebrick;
+}
+
+.comment-edit {
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-btn {
+  margin-top: 5px;
+}
+.comment-edit button {
+  padding: 3px 7px;
+  font-size: 12px;
+  margin-right: 10px;
+}

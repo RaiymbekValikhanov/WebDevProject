@@ -1,7 +1,7 @@
 <div class="amine-list">
 
   <div *ngFor="let i of animeList" class="anime-list-class">
-    <div *ngIf="i.photo" class="anime-container">
+    <div *ngIf="i.photo" class="anime-container" [routerLink]="['title/', i.name]">
       <a><img [src]=i.photo [width]="150" [height]="230" style="margin-left: 10px" class="image"></a>
       <div class="name-field" >{{i.name}}</div>
       <div class="episodes">{{i.episodes}} серия</div>

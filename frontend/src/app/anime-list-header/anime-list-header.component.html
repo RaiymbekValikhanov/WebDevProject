@@ -22,7 +22,7 @@
     <div class="login-btns">
       <button href="#" class="btn-register" *ngIf="!this.get_userService().token">Register</button>
       <button routerLink="/login" class="btn-login" *ngIf="!this.get_userService().token" >Login</button>
-      <div *ngIf="this.get_userService().token"> Welcome, user</div>
+      <button *ngIf="this.get_userService().token" class="btn-register" routerLink="/user"> Welcome, user</button>
       <button routerLink="/" class="btn-login" *ngIf="this.get_userService().token" (click)="LogOut()">LogOut</button>
     </div>
   </div>

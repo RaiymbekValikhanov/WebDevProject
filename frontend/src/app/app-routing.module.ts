@@ -5,12 +5,14 @@ import { TitlePageComponent } from './title-page/title-page.component';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FilmPageComponent } from './film-page/film-page.component';
+import {UserPageComponent} from './user-page/user-page.component';
 
 const routes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'title/:name', component: TitlePageComponent},
   {path: 'login', component: LoginPageComponent},
-  {path: 'films', component: FilmPageComponent}
+  {path: 'films', component: FilmPageComponent},
+  {path: 'user', component: UserPageComponent}
 ];
 
 @NgModule({

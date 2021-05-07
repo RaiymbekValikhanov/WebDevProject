@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-
-import {film_list} from '../../film-list';
 import { AppComponent} from '../app.component';
+import {Film} from '../models';
+import {FilterService} from '../services/filter.service';
 
 @Component({
   selector: 'app-film-page',
@@ -10,9 +9,17 @@ import { AppComponent} from '../app.component';
   styleUrls: ['./film-page.component.css']
 })
 export class FilmPageComponent implements OnInit {
-  film_list = film_list;
-  constructor() { }
+  film_list: Film[] = [];
+  constructor(
+    private filter: FilterService,
+  ) { }
 
+  initFilms(): void {
+    this.filter.getFilms().subscribe(data => {
+      this.film_list = data;
+    });
+  }
   ngOnInit(): void {
+    this.initFilms();
   }
 }

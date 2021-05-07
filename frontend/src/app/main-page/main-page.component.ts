@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import {anime_list} from '../../anime-list';
 import {AppComponent} from '../app.component';
 
 // @ts-ignore
